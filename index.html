@@ -583,6 +583,14 @@
       border-radius: 16px;
       font-style: italic;
     }
+    
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
 
     /* Социальные иконки в ряд */
     .social-row {
@@ -855,10 +863,18 @@
     </div>
   </section>
 
-  <!-- О ХУДОЖНИКЕ -->
+    <!-- О ХУДОЖНИКЕ -->
   <section id="about" class="about-section">
     <div class="about-container">
-      <div class="about-photo fade-in">👩‍🎨</div>
+      <div class="about-photo fade-in">
+        <img 
+          src="images/artist-photo.jpg" 
+          alt="Анна Петрова — художница в своей мастерской" 
+          loading="lazy"
+          width="400"
+          height="400"
+        >
+      </div>
       <div class="about-text fade-in">
         <h2>Обо мне</h2>
         <p>Меня зовут <span class="highlight">Анна</span>, я художница из Санкт-Петербурга. В своих работах я исследую связь между природой и внутренним миром человека, используя тёплую палитру и мягкие переходы.</p>
