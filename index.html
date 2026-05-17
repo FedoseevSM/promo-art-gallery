@@ -61,6 +61,66 @@
       align-items: center;
       gap: 0.5rem;
     }
+    
+        /* ===== Манифест галереи ===== */
+    .gallery-manifesto {
+      max-width: 780px;
+      margin: 1.5rem auto 0;
+      padding: 2.2rem 2.5rem;
+      background: var(--bg-secondary);
+      border-radius: 16px;
+      border-left: 4px solid var(--accent);
+      box-shadow: 0 4px 15px rgba(109, 76, 65, 0.06);
+      text-align: left;
+    }
+
+    .gallery-manifesto p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 1.1rem;
+      font-weight: 300;
+    }
+
+    .gallery-manifesto p:last-child {
+      margin-bottom: 0;
+    }
+
+    .gallery-manifesto strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .gallery-manifesto .manifesto-highlight {
+      font-size: 1.15rem;
+      color: var(--text-primary);
+      font-style: italic;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--accent-light);
+      font-weight: 400;
+    }
+
+    /* Адаптив манифеста */
+    @media (max-width: 768px) {
+      .gallery-manifesto {
+        padding: 1.6rem 1.4rem;
+        margin: 1.2rem 0 0;
+        border-radius: 12px;
+      }
+      .gallery-manifesto p {
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+      .gallery-manifesto .manifesto-highlight {
+        font-size: 1.05rem;
+      }
+    }
+
+    /* Убираем нижний отступ заголовка, чтобы манифест был ближе */
+    .section-header {
+      margin-bottom: 1rem;
+    }
 
     .logo span { color: var(--text-primary); }
 
