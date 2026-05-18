@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Портфолио художника | Живопись</title>
-  <meta name="description" content="Портфолио современной художницы. Оригинальные картины маслом, акварелью, смешанной техникой."/>
+  <title>Элина Манерова | Живопись и словесное искусство</title>
+  <meta name="description" content="Портфолио художницы Элины Манеровой. Коллекция «Мысли в Картинах»: оригинальные работы маслом, акрилом, масляной пастелью в авторских стилях."/>
   <style>
     /* ===== БАЗОВЫЕ НАСТРОЙКИ ===== */
     :root {
@@ -62,7 +62,38 @@
       gap: 0.5rem;
     }
     
-        /* ===== Манифест галереи ===== */
+    .logo span { color: var(--text-primary); }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-weight: 500;
+      padding: 0.4rem 0;
+      position: relative;
+      font-size: 1.05rem;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: var(--accent); }
+
+    /* ===== Манифест галереи ===== */
     .gallery-manifesto {
       max-width: 780px;
       margin: 1.5rem auto 0;
@@ -117,41 +148,9 @@
       }
     }
 
-    /* Убираем нижний отступ заголовка, чтобы манифест был ближе */
     .section-header {
       margin-bottom: 1rem;
     }
-
-    .logo span { color: var(--text-primary); }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 1.8rem;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      font-weight: 500;
-      padding: 0.4rem 0;
-      position: relative;
-      font-size: 1.05rem;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      transition: var(--transition);
-      border-radius: 2px;
-    }
-
-    nav a:hover::after { width: 100%; }
-    nav a:hover { color: var(--accent); }
 
     /* ===== HERO ===== */
     .hero {
@@ -362,7 +361,7 @@
       color: var(--text-secondary);
     }
     
-        /* ===== СТИЛИ ДЛЯ ИЗОБРАЖЕНИЙ В СЛАЙДЕРЕ ===== */
+    /* ===== СТИЛИ ДЛЯ ИЗОБРАЖЕНИЙ В СЛАЙДЕРЕ ===== */
     .slide-image {
       aspect-ratio: 4/3;
       background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
@@ -389,12 +388,10 @@
       opacity: 0;
     }
 
-    /* Эффект при наведении на слайд */
     .slide:hover .slide-image img {
       transform: scale(1.04);
     }
 
-    /* Заглушка, пока изображение грузится */
     .slide-image::before {
       content: '';
       position: absolute;
@@ -410,7 +407,6 @@
       pointer-events: none;
     }
 
-    /* Адаптив для изображений */
     @media (max-width: 900px) {
       .slide-image {
         aspect-ratio: 3/2;
@@ -542,7 +538,29 @@
       font-weight: 500;
     }
 
-    /* ===== КОНТАКТЫ — УЛУЧШЕННАЯ ВЕРСИЯ ===== */
+    /* ===== СТИЛИ АВТОРСКИХ НАПРАВЛЕНИЙ ===== */
+    .artist-styles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin: 1.5rem 0;
+      justify-content: center;
+    }
+
+    .style-tag {
+      background: var(--white);
+      color: var(--accent);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      box-shadow: 0 2px 10px rgba(201, 123, 93, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* ===== КОНТАКТЫ ===== */
     .contact-section {
       padding: 5rem 2rem;
       background: var(--white);
@@ -644,7 +662,7 @@
       font-style: italic;
     }
     
-        /* ===== СЕКЦИЯ КНИГ ===== */
+    /* ===== СЕКЦИЯ КНИГ ===== */
     .books-section {
       padding: 5rem 2rem;
       background: var(--bg-primary);
@@ -750,7 +768,6 @@
       font-size: 0.95rem;
     }
 
-    /* ===== АДАПТИВ КНИГ ===== */
     @media (max-width: 900px) {
       .books-container {
         grid-template-columns: 1fr;
@@ -788,7 +805,7 @@
       display: block;
     }
 
-    /* Социальные иконки в ряд */
+    /* Социальные иконки */
     .social-row {
       display: flex;
       justify-content: center;
@@ -848,6 +865,14 @@
       flex-wrap: wrap;
     }
 
+    .legal-info {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
     /* ===== АНИМАЦИИ ПРИ СКРОЛЛЕ ===== */
     .fade-in {
       opacity: 0;
@@ -892,11 +917,12 @@
 
   <!-- ШАПКА -->
   <header>
-    <div class="logo">🎨 <span>Анна Петрова</span></div>
+    <div class="logo">🎨 <span>Элина Манерова</span></div>
     <nav>
       <ul>
-        <li><a href="#gallery">Работы</a></li>
-        <li><a href="#about">Обо мне</a></li>
+        <li><a href="#gallery">Коллекция</a></li>
+        <li><a href="#about">Об авторе</a></li>
+        <li><a href="#books">Книги</a></li>
         <li><a href="#contact">Контакты</a></li>
       </ul>
     </nav>
@@ -904,34 +930,31 @@
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Живопись, которая говорит с душой</h1>
-    <p>Оригинальные картины маслом и акварелью. Каждая работа — история, созданная с любовью и вниманием к деталям.</p>
+    <h1>«Мысли в Картинах» — искусство, которое говорит с душой</h1>
+    <p>Коллекция из 50 оригинальных работ для инвесторов и ценителей смысла. Живопись, где слово становится визуальной медитацией.</p>
     <div>
-      <a href="#gallery" class="btn">🎨 Смотреть работы</a>
+      <a href="#gallery" class="btn">🎨 Смотреть коллекцию</a>
       <a href="#contact" class="btn btn-outline">✉️ Связаться</a>
     </div>
   </section>
 
-  
-        <!-- ГАЛЕРЕЯ-СЛАЙДЕР -->
+  <!-- ГАЛЕРЕЯ-СЛАЙДЕР -->
   <section id="gallery" class="gallery-section">
-
-    
-     <div class="section-header fade-in">
-      <h2 class="section-title">Избранные работы</h2>
+    <div class="section-header fade-in">
+      <h2 class="section-title">Коллекция «Мысли в Картинах»</h2>
       
       <div class="gallery-manifesto">
-        <p>Стили <strong>«Искусство в слове и слово как искусство»</strong>, <strong>«Слова с туннельным и перпендикулярным считыванием»</strong>, <strong>«Буква в букве»</strong> от художника МЕ.</p>
+        <p>Авторские стили художницы <strong>Элины Манеровой</strong>:</p>
         
-        <p>Среди повседневного шума человеку необходимо уединение, тишина, анализ «сейчас» и опора в мыслях. Авторские картины в стиле «Искусство в слове и слово как искусство» выступают в роли маяка.</p>
+        <p>🖼️ <strong>«Искусство в слове и слово как искусство»</strong> — где каждая буква становится элементом композиции, а текст обретает визуальную глубину.</p>
         
-        <p>Картины останавливают внимание зрителя на несколько секунд для считывания слова туннельным и перпендикулярным методами. Да, это прокачивает концентрацию внимания на одном деле.</p>
+        <p>🖼️ <strong>«Буква в букве»</strong> — многослойная структура, где форма содержит форму, создавая эффект погружения и медитативного созерцания.</p>
         
-        <p>«Буква в букве» — шаг за шагом, и уже слово охватывает в свою ауру. Следом тихие визуализации желаемого, погружение в прошлые события, будущие, что в моменте создают связь и опору для последующих действий.</p>
+        <p>🖼️ <strong>«Слова с перпендикулярным и туннельным считыванием»</strong> — инновационный подход к восприятию текста, тренирующий концентрацию и осознанность.</p>
         
-        <p>Минимализм и смысл акрилом, маслом на холсте как спутники, поддержка, любимая мелодия и радость через линии письменных букв или чётких, острых границ. То, что несомненно отражает характер обладателя.</p>
+        <p>Среди повседневного шума эти работы становятся маяком — останавливают взгляд, замедляют дыхание, возвращают к «сейчас».</p>
         
-        <p class="manifesto-highlight">Это чувства, эмоции, ощущения, которые создают слова, фразы, предложения, запечатлённые в картине.</p>
+        <p class="manifesto-highlight">Это не просто картины. Это чувства, эмоции и состояния, запечатлённые через силу слова и мастерство живописи.</p>
       </div>
     </div>
 
@@ -943,7 +966,7 @@
           <div class="slide-image">
             <img 
               src="images/painting-morning-fog.jpg" 
-              alt="Картина «Утренний туман» — масло на холсте, пейзаж с мягкими переходами цвета"
+              alt="Картина «Утренний туман» — масло на холсте, стиль «Буква в букве»"
               loading="lazy"
               width="600"
               height="450"
@@ -957,7 +980,7 @@
               <span>📅 2025</span>
             </div>
             <p class="description">
-              Пейзаж, написанный на рассвете в подмосковном лесу. Мягкие переходы и тёплая палитра передают ощущение тишины и пробуждения природы.
+              Работа в стиле «Буква в букве». Мягкие переходы и тёплая палитра создают эффект медитативного погружения. Проработанный контурный фон играет на свету, раскрывая новые грани при разном освещении.
             </p>
             <span class="price">Доступна • 85 000 ₽</span>
           </div>
@@ -968,7 +991,7 @@
           <div class="slide-image">
             <img 
               src="images/painting-warm-evening.jpg" 
-              alt="Картина «Тёплый вечер» — акварель, интерьерная работа с вечерним светом"
+              alt="Картина «Тёплый вечер» — акрил, стиль «Слово как искусство»"
               loading="lazy"
               width="600"
               height="450"
@@ -977,12 +1000,12 @@
           <div class="slide-content">
             <h3>Тёплый вечер</h3>
             <div class="meta">
-              <span>🎨 Акварель, бумага</span>
+              <span>🎨 Акрил, масляная пастель</span>
               <span>📐 40×50 см</span>
               <span>📅 2025</span>
             </div>
             <p class="description">
-              Работа из серии «Домашние моменты». Акварельная техника позволяет передать лёгкость и воздушность вечернего света в интерьере.
+              Интерьерная работа, где слово становится центром композиции. Техника «перпендикулярного считывания» позволяет открывать новые смыслы при каждом взгляде.
             </p>
             <span class="price">Доступна • 42 000 ₽</span>
           </div>
@@ -993,7 +1016,7 @@
           <div class="slide-image">
             <img 
               src="images/painting-blooming-garden.jpg" 
-              alt="Картина «Цветущий сад» — смешанная техника с использованием сусального золота"
+              alt="Картина «Цветущий сад» — смешанная техника, стиль «Туннельное считывание»"
               loading="lazy"
               width="600"
               height="450"
@@ -1007,7 +1030,7 @@
               <span>📅 2024</span>
             </div>
             <p class="description">
-              Эксперимент с текстурой и цветом. Сочетание акрила, пастели и сусального золота создаёт объём и игру света на поверхности.
+              Эксперимент с текстурой и светом. Сочетание акрила, пастели и сусального золота создаёт объём. Стиль «туннельного считывания» ведёт взгляд зрителя вглубь композиции.
             </p>
             <span class="price sold">Продана</span>
           </div>
@@ -1018,7 +1041,7 @@
           <div class="slide-image">
             <img 
               src="images/painting-silence.jpg" 
-              alt="Картина «Тишина» — минималистичный натюрморт маслом на картоне"
+              alt="Картина «Тишина» — минимализм, стиль «Слово как искусство»"
               loading="lazy"
               width="600"
               height="450"
@@ -1032,7 +1055,7 @@
               <span>📅 2025</span>
             </div>
             <p class="description">
-              Минималистичный натюрморт, где главный герой — свет. Работа исследует тему уединения и внутренней гармонии через простые формы.
+              Минималистичная работа, где главный герой — свет и форма буквы. Исследует тему уединения и внутренней гармонии через лаконичные визуальные решения.
             </p>
             <span class="price">Доступна • 38 000 ₽</span>
           </div>
@@ -1043,7 +1066,7 @@
           <div class="slide-image">
             <img 
               src="images/painting-golden-hour.jpg" 
-              alt="Картина «Золотой час» — крупноформатный пейзаж заката на Балтике"
+              alt="Картина «Золотой час» — крупный формат, стиль «Буква в букве»"
               loading="lazy"
               width="600"
               height="450"
@@ -1057,7 +1080,7 @@
               <span>📅 2025</span>
             </div>
             <p class="description">
-              Крупноформатная работа, вдохновлённая закатами на Балтике. Тёплая гамма и динамичные мазки передают энергию уходящего дня.
+              Крупноформатная работа для инвесторов. Тёплая гамма и динамичные мазки передают энергию момента. Качественный холст и провенанс — сертификат соответствия в комплекте.
             </p>
             <span class="price">Доступна • 120 000 ₽</span>
           </div>
@@ -1074,33 +1097,41 @@
     </div>
   </section>
 
-    <!-- О ХУДОЖНИКЕ -->
+  <!-- О ХУДОЖНИКЕ -->
   <section id="about" class="about-section">
     <div class="about-container">
       <div class="about-photo fade-in">
         <img 
           src="images/artist-photo.jpg" 
-          alt="Анна Петрова — художница в своей мастерской" 
+          alt="Элина Манерова — художница в мастерской, Уфа" 
           loading="lazy"
           width="400"
           height="400"
         >
       </div>
       <div class="about-text fade-in">
-        <h2>Обо мне</h2>
-        <p>Меня зовут <span class="highlight">Анна</span>, я художница из Санкт-Петербурга. В своих работах я исследую связь между природой и внутренним миром человека, используя тёплую палитру и мягкие переходы.</p>
-        <p>Образование: <span class="highlight">Санкт-Петербургская академия художеств</span>, факультет живописи. Участница выставок в России и Европе.</p>
-        <p>Каждая картина создаётся в единственном экземпляре и сопровождается <span class="highlight">сертификатом подлинности</span>. Возможна доставка по РФ и международная отправка.</p>
-        <a href="#contact" class="btn" style="margin-top: 1.5rem;">Написать мне</a>
+        <h2>Об авторе</h2>
+        <p>Меня зовут <span class="highlight">Элина Манерова</span>, я художница из <span class="highlight">Уфы</span>. Создатель коллекции из 50 картин «Мысли в Картинах» для инвесторов и ценителей современного искусства.</p>
+        
+        <div class="artist-styles">
+          <span class="style-tag">🖼️ Искусство в слове</span>
+          <span class="style-tag">🖼️ Буква в букве</span>
+          <span class="style-tag">🖼️ Туннельное считывание</span>
+        </div>
+        
+        <p>Мои работы — это современные и позитивные картины, дополняющие пространство смыслами. Каждая создана с использованием <span class="highlight">акрила, масла, масляной пастели</span> на качественных холстах.</p>
+        <p>Особое внимание уделяю <span class="highlight">проработанному контурному фону</span>, который играет на свету, раскрывая новые грани композиции при разном освещении.</p>
+        <p>Каждая работа сопровождается <span class="highlight">сертификатом соответствия (провенанс)</span> и доступна в <span class="highlight">подарочной упаковке</span>. Возможна доставка по РФ и международная отправка.</p>
+        <a href="#contact" class="btn" style="margin-top: 1.5rem;">Обсудить приобретение</a>
       </div>
     </div>
   </section>
   
-     <!-- КНИГИ -->
+  <!-- КНИГИ -->
   <section id="books" class="books-section">
     <div class="section-header fade-in">
-      <h2 class="section-title">Книги</h2>
-      <p class="section-subtitle">Литературные проекты, исследующие внутренний мир через слово, тишину и визуализацию</p>
+      <h2 class="section-title">Литературные проекты</h2>
+      <p class="section-subtitle">Книги, исследующие внутренний мир через слово, тишину и визуализацию — в гармонии с живописью</p>
     </div>
 
     <div class="books-container">
@@ -1109,7 +1140,7 @@
         <div class="book-cover">
           <img 
             src="images/book-mysli-cover.jpg" 
-            alt="Обложка книги «Мысли» Элины H" 
+            alt="Обложка книги «Мысли» Элины Манеровой" 
             loading="lazy"
             width="220"
             height="330"
@@ -1117,9 +1148,9 @@
         </div>
         <div class="book-info">
           <h3>Мысли</h3>
-          <p class="book-meta">Элина H • Ridero</p>
+          <p class="book-meta">Элина Манерова • Ridero</p>
           <p class="book-desc">
-            Сборник размышлений, где слово становится художественным объектом. Каждая страница — попытка остановиться, прожить момент «сейчас» и найти внутреннюю опору среди повседневного шума.
+            Сборник размышлений, где слово становится художественным объектом. Каждая страница — попытка остановиться, прожить момент «сейчас» и найти внутреннюю опору среди повседневного шума. Визуальные решения перекликаются с живописными работами коллекции.
           </p>
           <div class="book-actions">
             <a href="https://ridero.ru/books/mysli_6/" class="btn" target="_blank" rel="noopener">Читать на Ridero</a>
@@ -1133,7 +1164,7 @@
         <div class="book-cover">
           <img 
             src="images/book-thoughts-cover.jpg" 
-            alt="Обложка книги «Thoughts» by Elina H" 
+            alt="Обложка книги «Thoughts» by Elina Manerova" 
             loading="lazy"
             width="220"
             height="330"
@@ -1141,9 +1172,9 @@
         </div>
         <div class="book-info">
           <h3>Thoughts</h3>
-          <p class="book-meta">by Elina H • Ridero</p>
+          <p class="book-meta">by Elina Manerova • Ridero</p>
           <p class="book-desc">
-            Англоязычная версия проекта. Те же темы уединения, концентрации и тихих визуализаций, пропущенные через призму другого языка. Минимализм формы и глубина содержания, запечатлённые в тексте.
+            Англоязычная версия проекта. Те же темы уединения, концентрации и тихих визуализаций, пропущенные через призму другого языка. Минимализм формы и глубина содержания, запечатлённые в тексте и гармонично дополняющие живописную коллекцию.
           </p>
           <div class="book-actions">
             <a href="https://ridero.ru/books/thoughts" class="btn" target="_blank" rel="noopener">Read on Ridero</a>
@@ -1154,12 +1185,12 @@
     </div>
   </section>
 
-  <!-- КОНТАКТЫ — ТОЛЬКО ССЫЛКИ -->
+  <!-- КОНТАКТЫ -->
   <section id="contact" class="contact-section">
     <div class="contact-container">
       <h2 class="contact-title fade-in">Связаться со мной</h2>
       <p class="contact-subtitle fade-in">
-        Хотите приобрести работу, обсудить заказ или просто познакомиться? Выберите удобный способ связи — я обязательно отвечу.
+        Хотите приобрести работу из коллекции «Мысли в Картинах», обсудить индивидуальный заказ или сотрудничество? Выберите удобный способ связи — я обязательно отвечу.
       </p>
 
       <div class="contact-links">
@@ -1167,14 +1198,14 @@
         <div class="contact-card fade-in">
           <div class="contact-icon">✉️</div>
           <h4>Email</h4>
-          <a href="mailto:art@annapetrova.ru">art@annapetrova.ru</a>
+          <a href="mailto:art@elina-manerova.ru">art@elina-manerova.ru</a>
         </div>
 
         <!-- Telegram -->
         <div class="contact-card fade-in">
           <div class="contact-icon">📱</div>
           <h4>Telegram</h4>
-          <a href="https://t.me/anna_petrova_art" target="_blank">@anna_petrova_art</a>
+          <a href="https://t.me/elina_manerova_art" target="_blank">@elina_manerova_art</a>
         </div>
 
         <!-- WhatsApp -->
@@ -1187,24 +1218,30 @@
         <!-- Портфолио -->
         <div class="contact-card fade-in">
           <div class="contact-icon">🎨</div>
-          <h4>Behance</h4>
-          <a href="https://behance.net/annapetrova" target="_blank">behance.net/annapetrova</a>
+          <h4>Портфолио</h4>
+          <a href="#" target="_blank">elina-manerova.art</a>
         </div>
       </div>
 
       <p class="contact-note fade-in">
-        💌 Отвечаю в течение 24 часов. Для срочных вопросов лучше написать в Telegram.
+        💌 Отвечаю в течение 24 часов. Для срочных вопросов по приобретению работ лучше написать в Telegram.
       </p>
     </div>
   </section>
 
   <!-- ФУТЕР -->
   <footer>
-    <p>© 2026 Анна Петрова • Все права защищены</p>
-  
-    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
-      Сайт создан с любовью к искусству 🎨
+    <p>© 2026 Элина Манерова • Коллекция «Мысли в Картинах»</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.85;">
+      Уфа • Современные картины со смыслом 🎨
     </p>
+    
+    <div class="legal-info">
+      <p>ИП МАНЕРОВА Э.Н. • ИНН 023600479143</p>
+      <p style="margin-top: 0.3rem; font-size: 0.85rem; opacity: 0.75;">
+        Все работы защищены авторским правом. Сертификат соответствия прилагается к каждой картине.
+      </p>
+    </div>
   </footer>
 
   <script>
@@ -1224,43 +1261,31 @@
       }
 
       init() {
-        // Создаём точки навигации
         this.slides.forEach((_, index) => {
           const dot = document.createElement('button');
           dot.className = `slider-dot ${index === 0 ? 'active' : ''}`;
-          dot.setAttribute('aria-label', `Перейти к слайду ${index + 1}`);
+          dot.setAttribute('aria-label', `Перейти к работе ${index + 1}`);
           dot.addEventListener('click', () => this.goToSlide(index));
           this.dotsContainer.appendChild(dot);
         });
         
         this.dots = Array.from(this.dotsContainer.children);
-        
-        // Кнопки навигации
         this.prevBtn.addEventListener('click', () => this.prev());
         this.nextBtn.addEventListener('click', () => this.next());
         
-        // Клавиатура
         document.addEventListener('keydown', (e) => {
           if (e.key === 'ArrowLeft') this.prev();
           if (e.key === 'ArrowRight') this.next();
         });
         
-        // Автопрокрутка (опционально, отключено по умолчанию)
-        // this.startAutoSlide();
-        
         this.updateSlider();
       }
 
       updateSlider() {
-        // Сдвигаем трек
         this.track.style.transform = `translateX(-${this.currentIndex * 100}%)`;
-        
-        // Обновляем точки
         this.dots.forEach((dot, index) => {
           dot.classList.toggle('active', index === this.currentIndex);
         });
-        
-        // Кнопки
         this.prevBtn.disabled = this.currentIndex === 0;
         this.nextBtn.disabled = this.currentIndex === this.totalSlides - 1;
       }
@@ -1284,20 +1309,6 @@
           this.updateSlider();
         }
       }
-
-      startAutoSlide(interval = 6000) {
-        this.autoSlide = setInterval(() => {
-          if (this.currentIndex === this.totalSlides - 1) {
-            this.goToSlide(0);
-          } else {
-            this.next();
-          }
-        }, interval);
-      }
-
-      stopAutoSlide() {
-        if (this.autoSlide) clearInterval(this.autoSlide);
-      }
     }
 
     // ===== АНИМАЦИИ ПРИ СКРОЛЛЕ =====
@@ -1317,15 +1328,12 @@
 
     // ===== ИНИЦИАЛИЗАЦИЯ =====
     document.addEventListener('DOMContentLoaded', () => {
-      // Запускаем слайдер
       new SimpleSlider('sliderTrack', 'sliderDots', 'prevBtn', 'nextBtn');
       
-      // Наблюдаем за элементами для анимации
       document.querySelectorAll('.fade-in').forEach(el => {
         observer.observe(el);
       });
       
-      // Плавная прокрутка для якорных ссылок
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           e.preventDefault();
