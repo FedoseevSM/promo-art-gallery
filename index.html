@@ -911,6 +911,31 @@
       .section-title { font-size: 1.8rem; }
       .slider-btn { width: 42px; height: 42px; font-size: 1.2rem; }
     }
+    
+        /* ===== ДОП. СТИЛИ ДЛЯ HERO ===== */
+    .hero h1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-subtitle {
+      display: block;
+      font-size: clamp(1.3rem, 4vw, 2rem);
+      font-weight: 400;
+      color: var(--accent);
+      font-style: italic;
+      letter-spacing: 0.5px;
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-subtitle {
+        font-size: 1.4rem;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -928,9 +953,12 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+    <!-- HERO -->
   <section class="hero">
-    <h1>«Мысли в Картинах» искусство, которое говорит с душой</h1>
+    <h1>
+      «Мысли в Картинах»
+      <span class="hero-subtitle">искусство, которое говорит с душой</span>
+    </h1>
     <p>Коллекция из 50 оригинальных работ для инвесторов и ценителей смысла. Живопись, где слово становится визуальной медитацией.</p>
     <div>
       <a href="#gallery" class="btn">🎨 Смотреть коллекцию</a>
